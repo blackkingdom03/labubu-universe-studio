@@ -2,7 +2,7 @@
 
 一个为 Codex 桌面界面设计的暖象牙色 × 腮红粉主题，把工作区变成柔和、明亮又有一点工作室气质的创作空间。
 
-![LABUBU 宇宙创作站预览](assets/artwork.webp)
+![LABUBU 宇宙创作站预览](artwork-preview-pink-only.png)
 
 ## 这个项目是什么
 
