@@ -1,0 +1,807 @@
+/* LABUBU Universe Studio: native Codex controls over coordinated local materials. */
+:root[data-codexthemes-theme="labubu-universe-studio"] {
+  --ct-canvas: #f7f0eb;
+  --ct-surface: rgba(255, 248, 245, 0.94);
+  --ct-raised: #fffdfb;
+  --ct-input: #fffaf7;
+  --ct-user-message: #ffe6dc;
+  --ct-assistant-message: #fff9f2;
+  --ct-text: #3b2c30;
+  --ct-muted: #735c63;
+  --ct-disabled: #9a858b;
+  --ct-accent: #d95f78;
+  --ct-accent-soft: rgba(217, 95, 120, 0.16);
+  --ct-focus: #a93659;
+  --ct-border: #e8c9ce;
+  --ct-success: #2f765d;
+  --ct-warning: #8c5f20;
+  --ct-danger: #aa3f50;
+  --ct-shadow: rgba(75, 46, 54, 0.16);
+  --ct-terminal-bg: #fff8f4;
+  --ct-terminal-fg: #3b2c30;
+  --ct-titlebar-bg: #ffe6dc;
+  --ct-titlebar-fg: #5f454c;
+  --ct-titlebar-menu-fg: #000000;
+  --ct-titlebar-muted: #9c707a;
+  --ct-titlebar-border: #efd6d6;
+  --ct-titlebar-window-bg: #a95768;
+  --ct-titlebar-hover: rgba(169, 87, 104, 0.12);
+  --ct-danger-toast-bg: #fff5f1;
+  --ct-danger-toast-fg: #702b37;
+  --ct-danger-toast-border: #efc3c4;
+  --ct-danger-toast-accent: #b54d5d;
+  --ct-danger-toast-hover: #f9dfde;
+  --ct-danger-toast-shadow: 0 12px 28px rgba(135, 65, 78, 0.14);
+  --ct-art: url("./assets/artwork.webp");
+  --shimmer-text-secondary: var(--ct-muted) !important;
+  --shimmer-contrast: var(--ct-muted) !important;
+  --ct-font-display: "Iowan Old Style", "Songti SC", "Microsoft YaHei", serif;
+  --ct-font-body: "Avenir Next", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color-scheme: light;
+
+  --color-background-surface: var(--ct-canvas) !important;
+  --color-background-surface-under: var(--ct-surface) !important;
+  --color-background-panel: var(--ct-surface) !important;
+  --color-background-control: var(--ct-input) !important;
+  --color-background-control-opaque: var(--ct-input) !important;
+  --color-background-editor-opaque: var(--ct-canvas) !important;
+  --color-background-elevated-primary: var(--ct-raised) !important;
+  --color-background-elevated-primary-opaque: var(--ct-raised) !important;
+  --color-background-elevated-secondary: var(--ct-surface) !important;
+  --color-background-elevated-secondary-opaque: var(--ct-surface) !important;
+  --color-text-foreground: var(--ct-text) !important;
+  --color-text-foreground-secondary: var(--ct-muted) !important;
+  --color-text-foreground-tertiary: var(--ct-muted) !important;
+  --color-icon-primary: var(--ct-text) !important;
+  --color-icon-secondary: var(--ct-muted) !important;
+  --color-icon-tertiary: var(--ct-disabled) !important;
+  --color-border: var(--ct-border) !important;
+  --color-border-light: var(--ct-border) !important;
+  --color-border-heavy: var(--ct-border) !important;
+  --color-border-focus: var(--ct-focus) !important;
+  --color-token-bg-primary: var(--ct-canvas) !important;
+  --color-token-bg-secondary: var(--ct-surface) !important;
+  --color-token-bg-tertiary: var(--ct-raised) !important;
+  --color-token-main-surface-primary: var(--ct-canvas) !important;
+  --color-token-main-surface-secondary: var(--ct-surface) !important;
+  --color-token-side-bar-background: var(--ct-surface) !important;
+  --color-token-foreground: var(--ct-text) !important;
+  --color-token-text-primary: var(--ct-text) !important;
+  --color-token-text-secondary: var(--ct-muted) !important;
+  --color-token-text-tertiary: var(--ct-muted) !important;
+  --color-token-description-foreground: var(--ct-muted) !important;
+  --color-token-icon-foreground: var(--ct-muted) !important;
+  --color-token-input-background: var(--ct-input) !important;
+  --color-token-input-foreground: var(--ct-text) !important;
+  --color-token-input-placeholder-foreground: var(--ct-muted) !important;
+  --color-token-input-border: var(--ct-border) !important;
+  --color-token-border: var(--ct-border) !important;
+  --color-token-border-default: var(--ct-border) !important;
+  --color-token-border-heavy: var(--ct-border) !important;
+  --color-token-border-light: var(--ct-border) !important;
+  --color-token-list-hover-background: var(--ct-accent-soft) !important;
+  --color-token-list-active-selection-background: rgba(217, 95, 120, 0.24) !important;
+  --color-token-list-active-selection-foreground: var(--ct-text) !important;
+  --color-token-toolbar-hover-background: var(--ct-accent-soft) !important;
+  --color-token-button-background: var(--ct-focus) !important;
+  --color-token-button-foreground: #ffffff !important;
+  --color-token-button-border: var(--ct-border) !important;
+  --color-token-link: var(--ct-focus) !important;
+  --color-token-text-link-foreground: var(--ct-focus) !important;
+  --color-token-text-link-active-foreground: var(--ct-danger) !important;
+  --color-token-primary: var(--ct-accent) !important;
+  --color-token-focus-border: var(--ct-focus) !important;
+  --color-token-dropdown-background: var(--ct-raised) !important;
+  --color-token-dropdown-foreground: var(--ct-text) !important;
+  --color-token-menu-background: var(--ct-raised) !important;
+  --color-token-menu-border: var(--ct-border) !important;
+  --color-token-checkbox-background: var(--ct-input) !important;
+  --color-token-checkbox-border: var(--ct-border) !important;
+  --color-token-checkbox-foreground: var(--ct-accent) !important;
+  --color-token-badge-background: var(--ct-accent-soft) !important;
+  --color-token-badge-foreground: var(--ct-text) !important;
+  --color-token-scrollbar-slider-background: rgba(217, 95, 120, 0.18) !important;
+  --color-token-scrollbar-slider-hover-background: rgba(217, 95, 120, 0.28) !important;
+  --color-token-scrollbar-slider-active-background: rgba(169, 54, 89, 0.34) !important;
+  --color-token-conversation-header: var(--ct-muted) !important;
+  --color-token-conversation-body: var(--ct-text) !important;
+  --color-token-conversation-summary-leading: var(--ct-muted) !important;
+  --color-token-conversation-summary-trailing: var(--ct-muted) !important;
+  --color-token-message-surface: var(--ct-user-message) !important;
+  --color-token-non-assistant-message-background: var(--ct-user-message) !important;
+  --color-token-non-assistant-body-descendant: var(--ct-muted) !important;
+  --color-token-text-preformat-foreground: var(--ct-text) !important;
+  --color-token-text-preformat-background: var(--ct-surface) !important;
+  --color-token-text-code-block-background: var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] .bg-token-main-surface-secondary,
+:root[data-codexthemes-theme="labubu-universe-studio"] .bg-token-dropdown-background {
+  background: var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.rounded-3xl.bg-token-dropdown-background {
+  --color-token-dropdown-background: var(--ct-raised) !important;
+  --color-token-main-surface-primary: var(--ct-raised) !important;
+  --color-token-main-surface-secondary: var(--ct-raised) !important;
+  --color-token-bg-primary: var(--ct-raised) !important;
+  --color-token-bg-secondary: var(--ct-raised) !important;
+  --color-token-foreground: var(--ct-text) !important;
+  --color-token-text-primary: var(--ct-text) !important;
+  --color-token-text-secondary: var(--ct-muted) !important;
+  --color-token-text-tertiary: var(--ct-muted) !important;
+  background-color: var(--ct-raised) !important;
+  background-image: linear-gradient(var(--ct-raised), var(--ct-raised)) !important;
+  color: var(--ct-text) !important;
+  box-shadow: inset 0 0 0 100vmax var(--ct-raised), 0 18px 46px rgba(75, 46, 54, 0.20) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] header.bg-token-dropdown-background.text-token-text-tertiary {
+  background-color: var(--ct-raised) !important;
+  background-image: none !important;
+  color: var(--ct-muted) !important;
+  box-shadow: inset 0 0 0 100vmax var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.rounded-3xl.bg-token-dropdown-background section > header.bg-token-dropdown-background.text-token-text-tertiary [class*="group/section-toggle"] > span.truncate {
+  background-color: var(--ct-raised) !important;
+  box-shadow: inset 0 0 0 1px var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.rounded-3xl.bg-token-dropdown-background [data-slot^="thread-summary-panel-item-"] {
+  background-color: var(--ct-raised) !important;
+  box-shadow: 0 0 0 4px var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.rounded-3xl.bg-token-dropdown-background [data-slot^="thread-summary-panel-item-"] span {
+  background-color: var(--ct-raised) !important;
+  box-shadow: 0 0 0 4px var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.rounded-3xl.bg-token-dropdown-background [class*="group/summary-panel-item"] {
+  background-color: var(--ct-raised) !important;
+  box-shadow: inset 0 0 0 1px var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.rounded-3xl.bg-token-dropdown-background div[class*="group/summary-panel-item"] > button {
+  background-color: var(--ct-raised) !important;
+  box-shadow: inset 0 0 0 1px var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.rounded-3xl.bg-token-dropdown-background [class*="group/summary-panel-item"] span.min-w-0.flex-1 {
+  background-color: var(--ct-raised) !important;
+  box-shadow: inset 0 0 0 1px var(--ct-raised) !important;
+}
+
+aside.app-shell-left-panel,
+.composer-surface-chrome,
+[role="menu"],
+[role="dialog"],
+[data-codexthemes-surface="output"],
+[data-codexthemes-surface="diff"] {
+  color: var(--ct-text);
+  background: linear-gradient(145deg, rgba(255, 253, 251, 0.96), rgba(255, 248, 245, 0.91));
+  border-color: var(--ct-border);
+  box-shadow: 0 10px 28px var(--ct-shadow);
+  backdrop-filter: blur(18px) saturate(1.06);
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.app-header-tint {
+  position: relative;
+  color: var(--ct-titlebar-fg) !important;
+  background: var(--ct-titlebar-bg) !important;
+  border-color: var(--ct-titlebar-border) !important;
+  box-shadow: 0 6px 18px rgba(75, 46, 54, 0.08);
+  backdrop-filter: none;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"]
+  div:has(> div > #application-menu-trigger-file-menu) {
+  background: var(--ct-titlebar-bg) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.app-header-tint::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: var(--spacing-token-safe-header-right, 138px);
+  min-width: 138px;
+  border-bottom-left-radius: 18px;
+  background: var(--ct-titlebar-window-bg);
+  pointer-events: none;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.app-header-tint > button {
+  color: var(--ct-titlebar-muted) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.app-header-tint [id^="application-menu-trigger-"] {
+  color: var(--ct-titlebar-fg) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"]
+  div:has(+ div > #application-menu-trigger-file-menu) > span.contents > button {
+  color: var(--ct-titlebar-menu-fg) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [id^="application-menu-trigger-"],
+:root[data-codexthemes-theme="labubu-universe-studio"] [id^="application-menu-trigger-"]:hover,
+:root[data-codexthemes-theme="labubu-universe-studio"] [id^="application-menu-trigger-"]:focus-visible,
+:root[data-codexthemes-theme="labubu-universe-studio"] [id^="application-menu-trigger-"][data-state="open"] {
+  color: var(--ct-titlebar-menu-fg) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] div.app-header-tint button:hover,
+:root[data-codexthemes-theme="labubu-universe-studio"] div.app-header-tint button:focus-visible {
+  color: var(--ct-titlebar-fg) !important;
+  background-color: var(--ct-titlebar-hover) !important;
+}
+
+/* Danger toast: pale coral surface with explicit readable foregrounds. */
+:root[data-codexthemes-theme="labubu-universe-studio"]
+  .alert-root[role="alert"].bg-token-input-validation-error-background {
+  --color-token-foreground: var(--ct-danger-toast-fg) !important;
+  --color-token-input-validation-error-background: var(--ct-danger-toast-bg) !important;
+  --color-token-input-validation-error-border: var(--ct-danger-toast-border) !important;
+  color: var(--ct-danger-toast-fg) !important;
+  background: var(--ct-danger-toast-bg) !important;
+  border-color: var(--ct-danger-toast-border) !important;
+  box-shadow: var(--ct-danger-toast-shadow) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"]
+  .alert-root[role="alert"].bg-token-input-validation-error-background > .shrink-0,
+:root[data-codexthemes-theme="labubu-universe-studio"]
+  .alert-root[role="alert"].bg-token-input-validation-error-background > .shrink-0 svg {
+  color: var(--ct-danger-toast-accent) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"]
+  .alert-root[role="alert"].bg-token-input-validation-error-background > .min-w-0 {
+  color: var(--ct-danger-toast-fg) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"]
+  .alert-root[role="alert"].bg-token-input-validation-error-background > button {
+  color: var(--ct-danger-toast-accent) !important;
+  opacity: 1 !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"]
+  .alert-root[role="alert"].bg-token-input-validation-error-background > button:hover,
+:root[data-codexthemes-theme="labubu-universe-studio"]
+  .alert-root[role="alert"].bg-token-input-validation-error-background > button:focus-visible {
+  color: var(--ct-danger-toast-fg) !important;
+  background: var(--ct-danger-toast-hover) !important;
+}
+
+aside.app-shell-left-panel {
+  background: linear-gradient(180deg, rgba(255, 253, 251, 0.96), rgba(252, 236, 235, 0.92));
+}
+
+/* Keep the small sidebar profile monogram readable on the blush panel. */
+:root[data-codexthemes-theme="labubu-universe-studio"]
+  .sidebar-item > span[class*="text-token-charts-purple"] {
+  color: #71368a !important;
+  background-color: rgba(113, 54, 138, 0.14) !important;
+}
+
+/* Keep the stable sidebar pending-approval badge readable on the blush panel. */
+:root[data-codexthemes-theme="labubu-universe-studio"]
+  .sidebar-item[data-app-action-sidebar-thread-row]
+  [class~="bg-token-charts-green/20"][class~="text-token-charts-green"] {
+  color: var(--ct-success) !important;
+  background-color: rgba(47, 118, 93, 0.18) !important;
+}
+
+/* Token activity: white zero cells over native nonzero pink levels. */
+:root[data-codexthemes-theme="labubu-universe-studio"] [role="img"][class*="--profile-usage-level-0"] {
+  --profile-usage-level-0: #ffffff !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [role="img"][class*="--profile-usage-level-0"] [class~="bg-[var(--profile-usage-level-0)]"] {
+  background-color: #ffffff !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [role="img"][class*="--profile-usage-level-0"] [class~="bg-[color-mix(in_srgb,var(--color-token-primary)_14%,var(--profile-usage-level-0))]"] {
+  background-color: #ffffff !important;
+}
+/* End Token zero-white override. */
+
+.composer-surface-chrome:focus-within {
+  border-color: var(--ct-focus);
+  box-shadow: 0 0 0 2px rgba(169, 54, 89, 0.18), 0 12px 30px var(--ct-shadow);
+}
+
+.loading-shimmer-pure-text {
+  --shimmer-text-secondary: var(--ct-muted) !important;
+  --shimmer-contrast: var(--ct-muted) !important;
+}
+
+.loading-shimmer-pure-text,
+.loading-shimmer-pure-text span,
+:root[data-codexthemes-theme="labubu-universe-studio"] .loading-shimmer-pure-text [class*="cadencedShimmer"],
+:root[data-codexthemes-theme="labubu-universe-studio"] .loading-shimmer-pure-text [class*="cadencedShimmer"] * {
+  color: var(--ct-muted) !important;
+  -webkit-text-fill-color: var(--ct-muted) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [data-composer-navigation-target="permissions"] [class*="ComposerDropdownLabelValue"] {
+  --composer-dropdown-label-value-color: var(--ct-warning) !important;
+  color: var(--ct-warning) !important;
+}
+.text-token-git-decoration-added-resource-foreground { color: var(--ct-success) !important; }
+.text-token-git-decoration-deleted-resource-foreground { color: var(--ct-danger) !important; }
+
+aside.app-shell-left-panel,
+main[data-codexthemes-page="home"],
+main[data-codexthemes-page="conversation"],
+[role="menu"],
+[role="dialog"] {
+  font-family: var(--ct-font-body);
+  scrollbar-color: rgba(217, 95, 120, 0.24) transparent;
+}
+
+::selection { color: var(--ct-text); background: rgba(217, 95, 120, 0.25); }
+:focus-visible { outline-color: var(--ct-focus); }
+
+/* Home campaign stage: decorations remain behind native controls. */
+main[data-codexthemes-page="home"] {
+  color: var(--ct-text);
+  background: var(--ct-canvas);
+  isolation: isolate;
+}
+
+main[data-codexthemes-page="home"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  border: 0;
+  border-radius: 0;
+  background:
+    linear-gradient(90deg, rgba(247, 240, 235, 0.96) 0%, rgba(247, 240, 235, 0.88) 38%, rgba(247, 240, 235, 0.26) 64%, rgba(247, 240, 235, 0.12) 100%),
+    var(--ct-art) 74% 40% / cover no-repeat;
+  box-shadow: none;
+}
+
+main[data-codexthemes-page="home"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 0;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(217, 95, 120, 0.34) 0 2px, transparent 3px),
+    radial-gradient(circle at 42% 12%, rgba(255, 253, 251, 0.75) 0 3px, transparent 4px),
+    radial-gradient(circle at 88% 16%, rgba(217, 95, 120, 0.28) 0 2px, transparent 3px),
+    radial-gradient(circle at 92% 72%, rgba(255, 253, 251, 0.72) 0 2px, transparent 3px);
+  background-size: 113px 113px, 167px 167px, 137px 137px, 181px 181px;
+  opacity: 0.54;
+  animation: ct-universe-drift 8s ease-in-out infinite alternate;
+}
+
+main[data-codexthemes-page="home"] > :not(style) {
+  z-index: 2;
+}
+
+main[data-codexthemes-page="home"] [class~="group/title"] {
+  min-width: min(520px, calc(100vw - 96px));
+  padding: 28px 34px 30px;
+  border: 1px solid rgba(232, 201, 206, 0.88);
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(255, 253, 251, 0.94), rgba(255, 248, 245, 0.76));
+  box-shadow: 0 16px 38px rgba(75, 46, 54, 0.13);
+  backdrop-filter: blur(14px) saturate(1.05);
+}
+
+main[data-codexthemes-page="home"] [class~="group/title"]::before {
+  content: "LABUBU 宇宙";
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ct-accent);
+  font: 700 13px/1.2 var(--ct-font-body);
+  letter-spacing: 0.14em;
+  pointer-events: none;
+}
+
+main[data-codexthemes-page="home"] [class~="group/title"]::after {
+  content: "想象不设限，一起创造无限可能";
+  display: block;
+  margin-top: 10px;
+  color: var(--ct-muted);
+  font: 500 15px/1.5 var(--ct-font-body);
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+main[data-codexthemes-page="home"] [class~="group/title"] button {
+  position: relative;
+  color: var(--ct-text);
+  font-family: var(--ct-font-display);
+  font-size: clamp(30px, 3vw, 48px);
+  font-weight: 700;
+  text-decoration-color: rgba(217, 95, 120, 0.46);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.82);
+}
+
+main[data-codexthemes-page="home"] [class~="group/title"] button::before {
+  content: "✦";
+  position: absolute;
+  top: -20px;
+  right: -22px;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(232, 201, 206, 0.92);
+  border-radius: 50%;
+  color: var(--ct-accent);
+  background: rgba(255, 253, 251, 0.90);
+  box-shadow: 0 7px 16px rgba(75, 46, 54, 0.12);
+  font: 700 14px/26px var(--ct-font-body);
+  text-align: center;
+  pointer-events: none;
+}
+
+main[data-codexthemes-page="home"] header.app-header-tint::before {
+  content: "LABUBU STUDIO";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  max-width: 160px;
+  overflow: hidden;
+  color: var(--ct-muted);
+  font: 700 11px/1 var(--ct-font-body);
+  letter-spacing: 0.16em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+main[data-codexthemes-page="home"] [data-composer-navigation-target="workspace-project"] {
+  color: var(--ct-focus);
+  border: 1px solid rgba(232, 201, 206, 0.92);
+  border-radius: 999px;
+  background: rgba(255, 253, 251, 0.88);
+  box-shadow: 0 5px 14px rgba(75, 46, 54, 0.10);
+}
+
+main[data-codexthemes-page="home"] .composer-surface-chrome {
+  border: 1px solid rgba(232, 201, 206, 0.95);
+  border-radius: 24px;
+  background: linear-gradient(145deg, rgba(255, 253, 251, 0.97), rgba(255, 248, 245, 0.91));
+  box-shadow: 0 16px 36px rgba(75, 46, 54, 0.16);
+}
+
+main[data-codexthemes-page="home"] .composer-surface-chrome::after {
+  content: "✦";
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  z-index: 0;
+  color: rgba(217, 95, 120, 0.48);
+  font-size: 15px;
+  pointer-events: none;
+}
+
+aside.app-shell-left-panel [data-app-action-sidebar-thread-row]:hover,
+aside.app-shell-left-panel [data-app-action-sidebar-project-row]:hover {
+  background: rgba(217, 95, 120, 0.13);
+}
+
+aside.app-shell-left-panel [data-app-action-sidebar-thread-active="true"] {
+  color: var(--ct-text);
+  background: linear-gradient(90deg, rgba(217, 95, 120, 0.24), rgba(255, 248, 245, 0.72));
+  box-shadow: inset 3px 0 0 var(--ct-accent);
+}
+
+@keyframes ct-universe-drift {
+  from { opacity: 0.38; transform: translate3d(0, 0, 0); }
+  to { opacity: 0.60; transform: translate3d(0, -3px, 0); }
+}
+
+@media (max-width: 980px) {
+  main[data-codexthemes-page="home"]::before {
+    inset: 12px;
+    background:
+      linear-gradient(90deg, rgba(247, 240, 235, 0.97) 0%, rgba(247, 240, 235, 0.92) 50%, rgba(247, 240, 235, 0.34) 78%, rgba(247, 240, 235, 0.22) 100%),
+      var(--ct-art) 69% 44% / cover no-repeat;
+  }
+  main[data-codexthemes-page="home"]::after { display: none; }
+  main[data-codexthemes-page="home"] header.app-header-tint::before,
+  main[data-codexthemes-page="home"] [class~="group/title"] button::before { display: none; }
+  main[data-codexthemes-page="home"] [class~="group/title"] {
+    min-width: 0;
+    max-width: calc(100vw - 64px);
+    padding: 22px 24px 24px;
+  }
+  main[data-codexthemes-page="home"] [class~="group/title"] button {
+    font-size: clamp(26px, 5vw, 38px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+/* Conversation keeps the same world beneath a protective cream reading veil. */
+:root[data-codexthemes-background-scope="workspace"] main[data-codexthemes-page="conversation"] {
+  color: var(--ct-text);
+  background: var(--ct-canvas);
+  isolation: isolate;
+}
+
+:root[data-codexthemes-background-scope="workspace"] main[data-codexthemes-page="conversation"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+  filter: saturate(0.88) brightness(1.03);
+  background:
+    linear-gradient(90deg, rgba(247, 240, 235, 0.96) 0%, rgba(247, 240, 235, 0.90) 36%, rgba(247, 240, 235, 0.54) 58%, rgba(247, 240, 235, 0.14) 100%),
+    var(--ct-art) 74% 40% / cover no-repeat;
+}
+
+:root[data-codexthemes-background-scope="workspace"] main[data-codexthemes-page="conversation"] > :not(style) {
+  z-index: 1;
+}
+
+main[data-codexthemes-page="conversation"] [data-message-author-role],
+main[data-codexthemes-page="conversation"] [data-response-annotation-target],
+main[data-codexthemes-page="conversation"] .composer-surface-chrome,
+main[data-codexthemes-page="conversation"] pre,
+main[data-codexthemes-page="conversation"] [data-codexthemes-surface="output"],
+main[data-codexthemes-page="conversation"] [data-codexthemes-surface="diff"] {
+  background-color: rgba(255, 253, 251, 0.94);
+  border-color: var(--ct-border);
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [data-response-annotation-target] {
+  background-color: var(--ct-assistant-message) !important;
+  border: 1px solid var(--ct-border);
+  border-radius: 12px;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  box-shadow: 0 0 0 4px var(--ct-assistant-message), 0 8px 24px rgba(75, 46, 54, 0.10) !important;
+  width: fit-content !important;
+  inline-size: fit-content !important;
+  min-width: 0 !important;
+  max-width: min(86%, 980px) !important;
+  overflow-wrap: anywhere !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [data-message-author-role="user"] {
+  background-color: var(--ct-user-message) !important;
+  background-image: none !important;
+  border: 1px solid rgba(217, 95, 120, 0.32) !important;
+  box-shadow: inset 0 0 0 999px var(--ct-user-message), 0 8px 22px rgba(169, 54, 89, 0.11) !important;
+  width: fit-content !important;
+  max-width: min(78%, 920px) !important;
+  overflow-wrap: anywhere !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [data-message-author-role="user"] :is(p, li, span, div) {
+  background-color: var(--ct-user-message) !important;
+  background-image: none !important;
+  box-shadow: inset 0 0 0 1px var(--ct-user-message) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] :is([data-testid="user-message"], [class*="bg-token-message-surface"], [class*="bg-token-user-message"]) {
+  background-color: var(--ct-user-message) !important;
+  background-image: none !important;
+  border: 1px solid rgba(217, 95, 120, 0.32) !important;
+  box-shadow: inset 0 0 0 999px var(--ct-user-message), 0 8px 22px rgba(169, 54, 89, 0.11) !important;
+  width: fit-content !important;
+  max-width: min(78%, 920px) !important;
+  overflow-wrap: anywhere !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] :is([data-testid="user-message"], [class*="bg-token-message-surface"], [class*="bg-token-user-message"]) :is(p, li, span, div) {
+  background-color: var(--ct-user-message) !important;
+  background-image: none !important;
+  box-shadow: inset 0 0 0 1px var(--ct-user-message) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [data-user-message-bubble="true"] {
+  background-color: var(--ct-user-message) !important;
+  background-image: none !important;
+  border: 1px solid rgba(217, 95, 120, 0.32) !important;
+  box-shadow: inset 0 0 0 999px var(--ct-user-message), 0 8px 22px rgba(169, 54, 89, 0.11) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [class*="group/activity-header"] {
+  background: var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [class*="group/activity-header"] span.text-token-conversation-body {
+  background-color: var(--ct-raised) !important;
+  box-shadow: inset 0 0 0 1px var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [class*="group/activity-header"] span.text-token-conversation-summary-leading {
+  background-color: var(--ct-raised) !important;
+  box-shadow: inset 0 0 0 1px var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [class*="group/activity-header"] span.text-token-conversation-summary-trailing {
+  background-color: var(--ct-raised) !important;
+  box-shadow: inset 0 0 0 1px var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] div.text-size-chat.text-token-text-secondary > button:has(.text-token-conversation-body) {
+  background-color: var(--ct-raised) !important;
+  box-shadow: 0 0 0 4px var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [data-content-search-unit-key$=":assistant"] {
+  background: transparent !important;
+  border-radius: 12px;
+  box-shadow: none !important;
+  width: fit-content !important;
+  inline-size: fit-content !important;
+  min-width: 0 !important;
+  max-width: min(86%, 980px) !important;
+  overflow-wrap: anywhere !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [data-response-annotation-target]:has(pre),
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [data-content-search-unit-key$=":assistant"]:has(pre) {
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] :is([data-response-annotation-target], [data-content-search-unit-key$=":assistant"]):has(table) {
+  width: fit-content !important;
+  max-width: min(92%, 1040px) !important;
+  overflow-x: auto !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [data-response-annotation-target] table {
+  table-layout: auto !important;
+  min-width: 100% !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [data-response-annotation-target] table :is(th, td) {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.55 !important;
+  vertical-align: top !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [data-content-search-unit-key$=":assistant"] :is(p, li) {
+  background-color: var(--ct-assistant-message) !important;
+  box-shadow: 0 0 0 4px var(--ct-assistant-message) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] [data-content-search-unit-key$=":assistant"] p {
+  background-color: var(--ct-assistant-message) !important;
+  box-shadow: inset 0 0 0 1px var(--ct-assistant-message) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [data-codexthemes-page="conversation"] [data-response-annotation-target] :is(p, li) {
+  background-color: var(--ct-assistant-message) !important;
+  box-shadow: inset 0 0 0 1px var(--ct-assistant-message) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [data-codexthemes-page="conversation"] [data-response-annotation-target] strong {
+  color: var(--ct-text) !important;
+  background-color: var(--ct-assistant-message) !important;
+  box-shadow: inset 0 0 0 1px var(--ct-assistant-message) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [data-codexthemes-page="conversation"] [data-response-annotation-target] [data-markdown-copy="inline-code"] {
+  background-color: var(--ct-assistant-message) !important;
+  box-shadow: inset 0 0 0 1px var(--ct-assistant-message) !important;
+}
+
+/* The conversation full-access notice owns a local readable palette over workspace artwork. */
+:root[data-codexthemes-theme="labubu-universe-studio"] [data-codexthemes-page="conversation"] div.relative.z-0 > div.flex.items-center:has(> div.min-w-0.flex-1 > div.text-xs.font-semibold):has(> div.min-w-0.flex-1 > div.mt-0.5.text-xs):has(> button.border-token-border.no-drag) {
+  color: var(--ct-text) !important;
+  background-color: rgba(255, 253, 251, 0.98) !important;
+  border-color: var(--ct-border) !important;
+  box-shadow: 0 0 0 6px rgba(255, 253, 251, 0.98), 0 6px 18px rgba(75, 46, 54, 0.10) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [data-codexthemes-page="conversation"] div.relative.z-0 > div.flex.items-center:has(> div.min-w-0.flex-1 > div.text-xs.font-semibold):has(> div.min-w-0.flex-1 > div.mt-0.5.text-xs):has(> button.border-token-border.no-drag) > div.min-w-0.flex-1 > div.text-xs.font-semibold {
+  color: var(--ct-text) !important;
+  background-color: var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [data-codexthemes-page="conversation"] div.relative.z-0 > div.flex.items-center:has(> div.min-w-0.flex-1 > div.text-xs.font-semibold):has(> div.min-w-0.flex-1 > div.mt-0.5.text-xs):has(> button.border-token-border.no-drag) > div.min-w-0.flex-1 > div.mt-0.5.text-xs {
+  color: var(--ct-muted) !important;
+  background-color: var(--ct-raised) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [data-codexthemes-page="conversation"] div.relative.z-0 > div.flex.items-center:has(> div.min-w-0.flex-1 > div.text-xs.font-semibold):has(> div.min-w-0.flex-1 > div.mt-0.5.text-xs):has(> button.border-token-border.no-drag) > button.border-token-border.no-drag {
+  color: var(--ct-focus) !important;
+  background: var(--ct-raised) !important;
+  border-color: var(--ct-border) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [data-codexthemes-page="conversation"] div.relative.z-0 > div.flex.items-center:has(> div.min-w-0.flex-1 > div.text-xs.font-semibold):has(> div.min-w-0.flex-1 > div.mt-0.5.text-xs):has(> button.border-token-border.no-drag) > button.border-token-border.no-drag:hover {
+  color: var(--ct-text) !important;
+  background: var(--ct-accent-soft) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] [data-codexthemes-page="conversation"] [class*="bg-token-dropdown-background/"] {
+  background-color: var(--ct-raised) !important;
+  background-image: none !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] .codex-review-diff-card {
+  background: var(--ct-raised) !important;
+  color: var(--ct-text) !important;
+  border: 1px solid var(--ct-border) !important;
+}
+
+:root[data-codexthemes-theme="labubu-universe-studio"] main[data-codexthemes-page="conversation"] .codex-review-diff-card [class*="group/diff-header"] {
+  background: var(--ct-raised) !important;
+}
+
+[role="menu"],
+[role="dialog"] {
+  color: var(--ct-text);
+  background: var(--ct-raised);
+  border: 1px solid var(--ct-border);
+  box-shadow: 0 18px 46px rgba(75, 46, 54, 0.20);
+}
+
+/* System-page create actions stay readable both inside the control and at its edge. */
+[data-codexthemes-page="system"] button.bg-token-foreground.border-token-border.no-drag {
+  color: var(--ct-text) !important;
+  background: var(--ct-raised) !important;
+  border-color: var(--ct-accent) !important;
+  box-shadow: 0 4px 12px rgba(75, 46, 54, 0.10);
+}
+
+[data-codexthemes-page="system"] button.bg-token-foreground.border-token-border.no-drag:hover {
+  background: var(--ct-accent-soft) !important;
+}
+
+[aria-disabled="true"],
+[data-disabled="true"] {
+  color: var(--ct-disabled);
+}
+
+[data-codexthemes-surface="output"],
+[data-codexthemes-surface="diff"] {
+  color: var(--ct-text);
+  background: var(--ct-raised);
+  border: 1px solid var(--ct-border);
+}
+
+[data-codex-terminal="true"] {
+  --vscode-terminal-background: var(--ct-terminal-bg) !important;
+  --vscode-terminal-foreground: var(--ct-terminal-fg) !important;
+  --color-background-panel: var(--ct-terminal-bg) !important;
+  --color-background-editor-opaque: var(--ct-terminal-bg) !important;
+  color: var(--ct-terminal-fg) !important;
+  background: var(--ct-terminal-bg) !important;
+}
+
+.xterm,
+.xterm-viewport,
+.xterm-screen,
+[data-codexthemes-surface="terminal"] {
+  color: var(--ct-terminal-fg) !important;
+  background: var(--ct-terminal-bg) !important;
+}
+
+.xterm .xterm-selection div { background: rgba(217, 95, 120, 0.30) !important; }
+.xterm .xterm-cursor-layer { color: var(--ct-focus) !important; }
+
+@media (max-width: 980px) {
+  :root[data-codexthemes-background-scope="workspace"] main[data-codexthemes-page="conversation"]::before {
+    background-position: 0 0, 68% 48%;
+  }
+}

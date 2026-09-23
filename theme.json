@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "labubu-universe-studio",
+  "displayName": "LABUBU 宇宙创作站",
+  "description": "A warm cream-and-blush LABUBU universe studio theme for the official Codex desktop interface.",
+  "version": "0.1.29",
+  "mode": "light",
+  "css": "theme.css",
+  "art": "assets/artwork.webp",
+  "design": {
+    "layoutMode": "editorial-showcase",
+    "backgroundScope": "workspace",
+    "decorDensity": "rich",
+    "modeReason": "The approved reference is dominated by warm ivory, blush, coral, beige, and bright workshop light.",
+    "artFocalPoint": "74% 40%",
+    "textSafeRegion": "left 52%",
+    "contrastStrategy": "A strong left-side warm veil protects the home content; conversation artwork is subdued beneath opaque cream reading surfaces.",
+    "allowedChanges": ["bounded home hero", "semantic palette", "native materials", "decoration"],
+    "preserve": ["native controls", "native states", "native routes", "keyboard focus", "sidebar row actions"],
+    "verificationViewports": ["1440x900", "980x760"]
+  },
+  "palette": {
+    "canvas": "#f7f0eb",
+    "surface": "#fff8f5",
+    "raised": "#fffdfb",
+    "input": "#fffaf7",
+    "text": "#3b2c30",
+    "muted": "#735c63",
+    "disabled": "#9a858b",
+    "accent": "#d95f78",
+    "focus": "#a93659",
+    "border": "#e8c9ce",
+    "success": "#2f765d",
+    "warning": "#8c5f20",
+    "danger": "#aa3f50",
+    "terminalBackground": "#fff8f4",
+    "terminalForeground": "#3b2c30"
+  },
+  "platforms": ["windows"],
+  "author": { "name": "Local Codex user" },
+  "skillUrl": "https://codexthemes.ai/SKILL.md"
+}
