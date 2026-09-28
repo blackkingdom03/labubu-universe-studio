@@ -1,0 +1,21 @@
+name: Theme checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check background borders, routes, and colors
+        shell: pwsh
+        run: |
+          & ./tests/background-border.tests.ps1
+          & ./tests/artwork-route-contract.ps1
+          & ./tests/token-activity-heatmap-contract.ps1

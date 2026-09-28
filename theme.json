@@ -3,7 +3,7 @@
   "id": "labubu-universe-studio",
   "displayName": "LABUBU 宇宙创作站",
   "description": "A warm cream-and-blush LABUBU universe studio theme for the official Codex desktop interface.",
-  "version": "0.1.29",
+  "version": "0.1.31",
   "mode": "light",
   "css": "theme.css",
   "art": "assets/artwork.webp",

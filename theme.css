@@ -237,6 +237,21 @@ aside.app-shell-left-panel,
   background-color: var(--ct-titlebar-hover) !important;
 }
 
+/* Keep the Windows application-menu shell flush with the LABUBU workspace. */
+:root[data-codexthemes-theme="labubu-universe-studio"][data-codex-os="win32"]
+  [data-app-shell-frame][data-app-shell-page-surface="true"][data-app-shell-application-menu-header] {
+  --app-shell-titlebar-height: 0px;
+  --app-shell-page-inline-end-inset: 0px;
+  padding-block-end: 0;
+}
+
+/* Native white scroll fades must not draw a stripe over the artwork. */
+:root[data-codexthemes-theme="labubu-universe-studio"][data-codexthemes-background-scope="workspace"]
+  main:is([data-codexthemes-page="home"], [data-codexthemes-page="conversation"])
+  [data-app-shell-main-content-top-fade] > [class*="_MainContentTopFade_"] {
+  background-image: none;
+}
+
 /* Danger toast: pale coral surface with explicit readable foregrounds. */
 :root[data-codexthemes-theme="labubu-universe-studio"]
   .alert-root[role="alert"].bg-token-input-validation-error-background {
@@ -375,10 +390,8 @@ main[data-codexthemes-page="home"]::after {
   border-radius: 0;
   background:
     radial-gradient(circle at 14% 18%, rgba(217, 95, 120, 0.34) 0 2px, transparent 3px),
-    radial-gradient(circle at 42% 12%, rgba(255, 253, 251, 0.75) 0 3px, transparent 4px),
-    radial-gradient(circle at 88% 16%, rgba(217, 95, 120, 0.28) 0 2px, transparent 3px),
-    radial-gradient(circle at 92% 72%, rgba(255, 253, 251, 0.72) 0 2px, transparent 3px);
-  background-size: 113px 113px, 167px 167px, 137px 137px, 181px 181px;
+    radial-gradient(circle at 88% 16%, rgba(217, 95, 120, 0.28) 0 2px, transparent 3px);
+  background-size: 113px 113px, 137px 137px;
   opacity: 0.54;
   animation: ct-universe-drift 8s ease-in-out infinite alternate;
 }
@@ -505,7 +518,7 @@ aside.app-shell-left-panel [data-app-action-sidebar-thread-active="true"] {
 
 @media (max-width: 980px) {
   main[data-codexthemes-page="home"]::before {
-    inset: 12px;
+    inset: 0;
     background:
       linear-gradient(90deg, rgba(247, 240, 235, 0.97) 0%, rgba(247, 240, 235, 0.92) 50%, rgba(247, 240, 235, 0.34) 78%, rgba(247, 240, 235, 0.22) 100%),
       var(--ct-art) 69% 44% / cover no-repeat;
